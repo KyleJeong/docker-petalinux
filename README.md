@@ -1,3 +1,11 @@
+# Modification
+
+Default version is 2023.1
+
+Base image is Ubuntu 2022.04
+
+Add install option of arm and aarch64.
+
 # Generic Petalinux Dockerfile
 
 A somehow generic Xilinx PetaLinux 2020+ docker file, using Ubuntu (though some tweaks might be possible for Windows).

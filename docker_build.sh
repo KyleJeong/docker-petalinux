@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Default version 2022.2
-XILVER=${1:-2022.2}
+XILVER=${1:-2023.1}
 
 # Check SDK and petalinux installers exists
 PLNX="resources/petalinux-v${XILVER}-final-installer.run"

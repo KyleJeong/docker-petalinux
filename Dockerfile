@@ -1,7 +1,7 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
 # The Xilinx toolchain version
-ARG XILVER=2022.2
+ARG XILVER=2023.1
 
 # The PetaLinux base. We expect ${PETALINUX_BASE}-installer.run to be the patched installer.
 # PetaLinux will be installed in /opt/${PETALINX_BASE}
@@ -93,7 +93,7 @@ USER petalinux
 RUN chown -R petalinux:petalinux . \
 	&& wget -q ${HTTP_SERV}/${PETALINUX_INSTALLER} \
 	&& chmod a+x ${PETALINUX_INSTALLER} \
-	&& SKIP_LICENSE=y ./${PETALINUX_FILE}${PETALINUX_INSTALLER} --skip_license --dir /opt/${PETALINUX_BASE} \
+	&& SKIP_LICENSE=y ./${PETALINUX_FILE}${PETALINUX_INSTALLER} --skip_license --dir /opt/${PETALINUX_BASE} -p "arm aarch64"\
 	&& rm -f ./${PETALINUX_INSTALLER} \
 	&& rm -f petalinux_installation_log
 
